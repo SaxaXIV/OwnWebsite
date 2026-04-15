@@ -12,7 +12,6 @@ const ASSETS_TO_CACHE = [
   '/styles.css',
   '/script.js',
   '/manifest.json',
-  '/profile.jpg',
   '/starbucks.jpg',
   '/architecture1.jpg',
   '/resume-preview.jpg',
