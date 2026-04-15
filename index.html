@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Kyle C. Dimayuga | Web Developer & Designer</title>
+
+    <!-- ==================== SEO Meta Tags ==================== -->
+    <meta name="description"
+        content="Portfolio of Joshua Kyle C. Dimayuga — Full-Stack Web Developer, UI/UX Designer, and Animator based in Mandaluyong City. Skilled in React, Node.js, Supabase, and creative problem-solving.">
+    <meta name="keywords"
+        content="Joshua Kyle Dimayuga, Web Designer, Photographer, Portfolio, React Developer, UI/UX, Animator, Manila, Mandaluyong, Full Stack, De La Salle Benilde">
+    <meta name="author" content="Joshua Kyle C. Dimayuga">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f5c400">
+
+    <!-- Open Graph / Social Share -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saxaxiv.github.io/">
+    <meta property="og:title" content="Joshua Kyle C. Dimayuga | Web Developer & Designer">
+    <meta property="og:description"
+        content="Bridging technical logic with creative vision. Dean's Lister, Coffee Master, Animator & Developer.">
+    <meta property="og:image" content="profile.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Joshua Kyle C. Dimayuga | Portfolio">
+    <meta name="twitter:description" content="Bridging technical logic with creative vision.">
+
+    <!-- Fonts: Inter + Outfit from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Joshua Kyle C. Dimayuga",
+      "jobTitle": "Full-Stack Web Developer & UI/UX Designer",
+      "url": "https://github.com/SaxaXIV",
+      "email": "kyle.dimayuga18@gmail.com",
+      "telephone": "09770191183",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mandaluyong City",
+        "addressCountry": "PH"
+      },
+      "alumniOf": "De La Salle-College of Saint Benilde",
+      "sameAs": ["https://github.com/SaxaXIV"]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- ============================================================
+         CURSOR GLOW EFFECT
+    ============================================================ -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- ============================================================
+         LOADING SCREEN
+    ============================================================ -->
+    <div class="loader-screen" id="loaderScreen" aria-hidden="true">
+        <div class="loader-logo">JKD</div>
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         NAVIGATION
+    ============================================================ -->
+    <nav id="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="#home" class="nav-logo" aria-label="Home">
+                <span class="logo-text">JK<span class="logo-accent">D</span></span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <ul class="nav-links" role="list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Nav CTA & Hamburger -->
+            <div class="nav-right">
+                <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer" class="nav-github"
+                    aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile Menu">
+            <ul role="list">
+                <li><a href="#home" class="mobile-link">Home</a></li>
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#skills" class="mobile-link">Skills</a></li>
+                <li><a href="#experience" class="mobile-link">Experience</a></li>
+                <li><a href="#projects" class="mobile-link">Projects</a></li>
+                <li><a href="#gallery" class="mobile-link">Gallery</a></li>
+                <li><a href="#resume" class="mobile-link">Resume</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+                <li>
+                    <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                        class="mobile-link mobile-github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section id="home" class="hero" aria-label="Hero Introduction">
+        <!-- Animated Background Particles -->
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-grid-overlay"></div>
+            <div class="particle" style="--x:10%;--y:20%;--s:0.4;--d:5s;"></div>
+            <div class="particle" style="--x:80%;--y:70%;--s:0.7;--d:7s;"></div>
+            <div class="particle" style="--x:50%;--y:40%;--s:0.5;--d:6s;"></div>
+            <div class="particle" style="--x:30%;--y:85%;--s:0.3;--d:8s;"></div>
+            <div class="particle" style="--x:90%;--y:15%;--s:0.6;--d:4s;"></div>
+            <div class="particle" style="--x:70%;--y:55%;--s:0.45;--d:9s;"></div>
+            <div class="particle" style="--x:15%;--y:60%;--s:0.55;--d:6.5s;"></div>
+        </div>
+
+        <div class="container hero-container">
+            <!-- Text Side -->
+            <div class="hero-content" data-aos="fade-right">
+                <div class="hero-badge" aria-label="Role Label">
+                    <i class="fas fa-code"></i>
+                    Web Developer &amp; Designer
+                </div>
+
+                <h1 class="hero-name">
+                    Joshua Kyle<br>
+                    C.&nbsp;<span class="text-accent">Dimayuga</span>
+                </h1>
+
+                <p class="hero-tagline">
+                    Building <span class="text-accent">Experiences</span>
+                    through clean code, modern design, and creative problem-solving.
+                </p>
+
+                <div class="hero-stats" aria-label="Quick Stats">
+                    <div class="stat-item">
+                        <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years Working</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-num" data-count="2">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-num" data-count="4">0</span><span class="stat-plus">×</span>
+                        <span class="stat-label">Dean's List</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions" aria-label="Call to Action Buttons">
+                    <a href="#projects" class="btn btn-primary" id="hero-cta-work">
+                        <i class="fas fa-briefcase"></i> View My Work
+                    </a>
+                    <a href="resume.pdf" target="_blank" class="btn btn-outline-hero" id="hero-view-resume">
+                        <i class="fas fa-file-alt"></i> View Resume
+                    </a>
+                    <a href="resume.pdf" download="Joshua_Kyle_Dimayuga_Resume.pdf" class="btn btn-outline-hero"
+                        id="hero-download-resume">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-ghost-hero" id="hero-cta-github" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+                    <span>Scroll Down</span>
+                    <span class="scroll-arrow"><i class="fas fa-chevron-down"></i></span>
+                </a>
+            </div>
+
+            <!-- Image Side -->
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="hero-image-wrapper">
+                    <!-- Decorative rings -->
+                    <div class="ring ring-1" aria-hidden="true"></div>
+                    <div class="ring ring-2" aria-hidden="true"></div>
+                    <div class="ring ring-3" aria-hidden="true"></div>
+                    <!-- Profile image -->
+                    <div class="profile-frame">
+                        <img src="profile.jpg" alt="Joshua Kyle C. Dimayuga — Web Designer and Photographer"
+                            class="profile-img" loading="eager" width="400" height="400"
+                            onerror="this.src='https://placehold.co/400x400/111111/f5c400?text=JKD'">
+                    </div>
+                    <!-- Floating badge cards -->
+                    <div class="float-badge badge-coffee" aria-label="Coffee Master">
+                        <i class="fas fa-coffee"></i>
+                        <span>Coffee Master</span>
+                    </div>
+                    <div class="float-badge badge-dev" aria-label="Dean's Lister">
+                        <i class="fas fa-trophy"></i>
+                        <span>Dean's Lister</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+    ============================================================ -->
+    <section id="about" class="section" aria-label="About Me">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Who I Am</span>
+                <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Profile Card -->
+                <div class="about-profile-card" data-aos="fade-right">
+                    <div class="about-img-wrap">
+                        <img src="profile.jpg" alt="Joshua Kyle C. Dimayuga profile photo" class="about-img"
+                            loading="lazy" width="320" height="380"
+                            onerror="this.src='https://placehold.co/320x380/111111/f5c400?text=JKD'">
+                        <div class="about-img-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="about-contact-chips">
+                        <a href="mailto:kyle.dimayuga18@gmail.com" class="chip" aria-label="Email">
+                            <i class="fas fa-envelope"></i> kyle.dimayuga18@gmail.com
+                        </a>
+                        <a href="tel:09770191183" class="chip" aria-label="Phone">
+                            <i class="fas fa-phone"></i> 09770191183
+                        </a>
+                        <span class="chip" aria-label="Location">
+                            <i class="fas fa-map-marker-alt"></i> Mandaluyong City
+                        </span>
+                        <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                            class="chip chip-accent" aria-label="GitHub">
+                            <i class="fab fa-github"></i> SaxaXIV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="about-info-wrap" data-aos="fade-left">
+                    <!-- Profile Summary -->
+                    <div class="info-card glass-card">
+                        <h3><i class="fas fa-user-circle text-accent"></i> Profile</h3>
+                        <p>
+                            Adaptable and detail-oriented professional with a strong foundation in Information
+                            Technology and a background in creative problem-solving. Proven ability to understand
+                            both technical systems and user needs, enabling effective communication across teams
+                            and stakeholders. Experienced in fast-paced environments, delivering high-quality
+                            outputs with accuracy and consistency.
+                        </p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="info-card glass-card">
+                        <h3><i class="fas fa-graduation-cap text-accent"></i> Education &amp; Honors</h3>
+                        <div class="edu-entry">
+                            <div class="edu-school">De La Salle-College of Saint Benilde</div>
+                            <div class="edu-degree">Bachelor of Science in Information Technology</div>
+                            <div class="edu-year">2018 – Present</div>
+                            <ul class="honors-list" aria-label="Academic Honors">
+                                <li><i class="fas fa-award text-accent"></i> Consistent Dean's Lister (3 Consecutive
+                                    Semesters)</li>
+                                <li><i class="fas fa-star text-accent"></i> GPA 3.700 — 1st Sem, 2024-2025</li>
+                                <li><i class="fas fa-star text-accent"></i> GPA 3.470 — 3rd Sem, 2023-2024</li>
+                                <li><i class="fas fa-star text-accent"></i> GPA 3.416 — 2nd Sem, 2024-2025</li>
+                            </ul>
+                        </div>
+                        <div class="edu-entry" style="margin-top:1rem;">
+                            <div class="edu-school">Toon City Academy</div>
+                            <div class="edu-degree">Basic Animation Workshop</div>
+                            <div class="edu-year">2013 – 2014</div>
+                        </div>
+                    </div>
+
+                    <!-- Competencies -->
+                    <div class="info-card glass-card">
+                        <h3><i class="fas fa-bolt text-accent"></i> Key Competencies</h3>
+                        <div class="comp-grid">
+                            <div class="comp-item">
+                                <div class="comp-icon"><i class="fas fa-bug"></i></div>
+                                <div>
+                                    <strong>Problem Solving</strong>
+                                    <p>Efficient in debugging and SQL database management</p>
+                                </div>
+                            </div>
+                            <div class="comp-item">
+                                <div class="comp-icon"><i class="fas fa-sync-alt"></i></div>
+                                <div>
+                                    <strong>Adaptability</strong>
+                                    <p>Transitioning from creative arts into technical IT roles</p>
+                                </div>
+                            </div>
+                            <div class="comp-item">
+                                <div class="comp-icon"><i class="fas fa-users"></i></div>
+                                <div>
+                                    <strong>Collaboration</strong>
+                                    <p>Experienced in multidisciplinary studio &amp; retail teams</p>
+                                </div>
+                            </div>
+                            <div class="comp-item">
+                                <div class="comp-icon"><i class="fas fa-palette"></i></div>
+                                <div>
+                                    <strong>UI/UX Design</strong>
+                                    <p>Localized UX research and user-centered interfaces</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS SECTION
+    ============================================================ -->
+    <section id="skills" class="section section-dark" aria-label="Technical Skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What I Know</span>
+                <h2 class="section-title">Technical <span class="text-accent">Skills</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-card glass-card" data-aos="fade-up" data-delay="0">
+                    <div class="skill-card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript (ES6+)</span>
+                        <span class="tag">React.js</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-card glass-card" data-aos="fade-up" data-delay="100">
+                    <div class="skill-card-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express.js</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Database & Cloud -->
+                <div class="skill-card glass-card" data-aos="fade-up" data-delay="200">
+                    <div class="skill-card-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database &amp; Cloud</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Supabase</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">SQL Management</span>
+                    </div>
+                </div>
+
+                <!-- Deployment -->
+                <div class="skill-card glass-card" data-aos="fade-up" data-delay="300">
+                    <div class="skill-card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Deployment</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Netlify</span>
+                        <span class="tag">Vercel</span>
+                    </div>
+                </div>
+
+                <!-- Creative & Design -->
+                <div class="skill-card glass-card" data-aos="fade-up" data-delay="400">
+                    <div class="skill-card-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Design &amp; Creative</h3>
+                    <div class="skill-tags">
+                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">Digital Animation</span>
+                        <span class="tag">Traditional Animation</span>
+                        <span class="tag">C#</span>
+                    </div>
+                </div>
+
+                <!-- Photography -->
+                <div class="skill-card glass-card" data-aos="fade-up" data-delay="500">
+                    <div class="skill-card-icon"><i class="fas fa-camera"></i></div>
+                    <h3>Photography</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Visual Storytelling</span>
+                        <span class="tag">Composition</span>
+                        <span class="tag">Lightroom</span>
+                        <span class="tag">Photo Editing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE SECTION
+    ============================================================ -->
+    <section id="experience" class="section" aria-label="Work Experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">My Journey</span>
+                <h2 class="section-title">Work <span class="text-accent">Experience</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline" role="list">
+
+                <!-- Starbucks Experience -->
+                <article class="timeline-item" data-aos="fade-up" role="listitem">
+                    <div class="tl-connector" aria-hidden="true">
+                        <div class="tl-dot"></div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-card glass-card">
+                        <div class="tl-header">
+                            <div class="tl-company-icon starbucks-icon" aria-hidden="true">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <div class="tl-meta">
+                                <span class="tl-period">2020 – Present</span>
+                                <h3 class="tl-company">Starbucks Coffee Company</h3>
+                                <span class="tl-role">Coffee Master / Barista</span>
+                            </div>
+                        </div>
+                        <!-- Starbucks photo -->
+                        <div class="tl-photo-wrap">
+                            <img src="starbucks.jpg" alt="Kyle Dimayuga as Coffee Master at Starbucks Reserve"
+                                class="tl-photo" loading="lazy" width="600" height="300"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <ul class="tl-bullets" aria-label="Achievements at Starbucks">
+                            <li><i class="fas fa-check-circle text-accent"></i> Earned "Coffee Master" certification,
+                                demonstrating advanced product knowledge and leadership</li>
+                            <li><i class="fas fa-check-circle text-accent"></i> Managed high-volume transactions and
+                                inventory while maintaining strict quality standards</li>
+                            <li><i class="fas fa-check-circle text-accent"></i> Consistently resolved customer conflict
+                                and optimized workflow efficiency during peak hours</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Animation Experience -->
+                <article class="timeline-item" data-aos="fade-up" role="listitem">
+                    <div class="tl-connector" aria-hidden="true">
+                        <div class="tl-dot"></div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-card glass-card">
+                        <div class="tl-header">
+                            <div class="tl-company-icon anim-icon" aria-hidden="true">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <div class="tl-meta">
+                                <span class="tl-period">Animation Credits</span>
+                                <h3 class="tl-company">Professional Animation &amp; Media</h3>
+                                <span class="tl-role">Animator / Technical Artist</span>
+                            </div>
+                        </div>
+                        <div class="tl-credits" aria-label="Animation Credits">
+                            <div class="credit-group">
+                                <strong><i class="fas fa-tv text-accent"></i> TV Shows</strong>
+                                <p>Star vs. the Forces of Evil, Tom and Jerry (Traditional), Kronk</p>
+                            </div>
+                            <div class="credit-group">
+                                <strong><i class="fas fa-ad text-accent"></i> TV Commercials</strong>
+                                <p>Bear Brand (Generation), Tang Fruit Teaz, Hi-Smart Multivitamins</p>
+                            </div>
+                        </div>
+                        <ul class="tl-bullets" aria-label="Achievements in Animation">
+                            <li><i class="fas fa-check-circle text-accent"></i> Applied rigorous attention to detail and
+                                met tight production deadlines for international studios</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS SECTION
+    ============================================================ -->
+    <section id="projects" class="section section-dark" aria-label="Projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What I've Built</span>
+                <h2 class="section-title">My <span class="text-accent">Projects</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" role="tablist" aria-label="Project Filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true"
+                    id="filter-all">All</button>
+                <button class="filter-btn" data-filter="web" role="tab" aria-selected="false" id="filter-web">Web
+                    Dev</button>
+                <button class="filter-btn" data-filter="design" role="tab" aria-selected="false"
+                    id="filter-design">Design</button>
+                <button class="filter-btn" data-filter="animation" role="tab" aria-selected="false"
+                    id="filter-animation">Animation</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" role="tabpanel" aria-label="Project cards">
+
+                <!-- BiteBalance -->
+                <article class="project-card glass-card" data-category="web" data-aos="fade-up">
+                    <div class="project-img-wrap">
+                        <img src="bitebalance.jpg" alt="BiteBalance Nutrition Tracking App — Capstone Project"
+                            class="project-img" loading="lazy" width="400" height="220"
+                            onerror="this.src='https://placehold.co/400x220/1a1a1a/f5c400?text=BiteBalance'">
+                        <div class="project-overlay" aria-hidden="true">
+                            <div class="overlay-actions">
+                                <a href="https://bitebalancever17.netlify.app" target="_blank" rel="noopener noreferrer"
+                                    class="overlay-btn" aria-label="View BiteBalance Demo">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                                    class="overlay-btn" aria-label="View GitHub">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <span class="project-badge">Capstone</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>BiteBalance</h3>
+                        <p>A culturally-aware nutrition tracking application with real-time data sync. Implemented
+                            responsive frontend with React and backend services using Supabase.</p>
+                        <div class="project-tags">
+                            <span class="ptag">React</span>
+                            <span class="ptag">Node.js</span>
+                            <span class="ptag">Supabase</span>
+                            <span class="ptag">Netlify</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Portfolio Site -->
+                <article class="project-card glass-card" data-category="web design" data-aos="fade-up" data-delay="100">
+                    <div class="project-img-wrap">
+                        <img src="https://placehold.co/400x220/1a1a1a/f5c400?text=Portfolio+Site"
+                            alt="Personal Portfolio Website — Web Design Project" class="project-img" loading="lazy"
+                            width="400" height="220">
+                        <div class="project-overlay" aria-hidden="true">
+                            <div class="overlay-actions">
+                                <a href="#home" class="overlay-btn" aria-label="You are here — Portfolio">
+                                    <i class="fas fa-eye"></i> You're Here!
+                                </a>
+                                <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                                    class="overlay-btn" aria-label="View GitHub">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <span class="project-badge badge-design">Design</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Personal Portfolio</h3>
+                        <p>This very portfolio — designed from scratch with a premium black &amp; yellow aesthetic,
+                            smooth animations, and full SEO optimization.</p>
+                        <div class="project-tags">
+                            <span class="ptag">HTML5</span>
+                            <span class="ptag">CSS3</span>
+                            <span class="ptag">JavaScript</span>
+                            <span class="ptag">UI/UX</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Animation Work -->
+                <article class="project-card glass-card" data-category="animation" data-aos="fade-up" data-delay="200">
+                    <div class="project-img-wrap">
+                        <img src="https://placehold.co/400x220/1a1a1a/f5c400?text=Animation+Credits"
+                            alt="Professional Animation Projects — TV Shows and Commercials" class="project-img"
+                            loading="lazy" width="400" height="220">
+                        <div class="project-overlay" aria-hidden="true">
+                            <div class="overlay-actions">
+                                <a href="#experience" class="overlay-btn" aria-label="View animation experience">
+                                    <i class="fas fa-film"></i> View Credits
+                                </a>
+                            </div>
+                        </div>
+                        <span class="project-badge badge-anim">Animation</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Professional Animation</h3>
+                        <p>International animation credits including Star vs. the Forces of Evil, Tom and Jerry, Kronk —
+                            plus TV commercials for major brands.</p>
+                        <div class="project-tags">
+                            <span class="ptag">Traditional</span>
+                            <span class="ptag">Digital</span>
+                            <span class="ptag">International</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- More on GitHub -->
+                <article class="project-card glass-card project-github-card" data-category="web design animation"
+                    data-aos="fade-up" data-delay="300">
+                    <div class="github-invite" aria-label="Visit GitHub Profile">
+                        <i class="fab fa-github github-big-icon" aria-hidden="true"></i>
+                        <h3>More on GitHub</h3>
+                        <p>Explore more of my code, experiments, and open-source contributions on GitHub.</p>
+                        <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary" id="github-projects-btn">
+                            <i class="fab fa-github"></i> Visit @SaxaXIV
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY / PHOTOGRAPHY SECTION
+    ============================================================ -->
+    <section id="gallery" class="section" aria-label="Photography Gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Visual Stories</span>
+                <h2 class="section-title">My <span class="text-accent">Gallery</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <div class="gallery-grid" data-aos="fade-up">
+
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item gallery-item-wide" role="button" tabindex="0"
+                    aria-label="Open photo: Coffee Master at Starbucks">
+                    <img src="starbucks.jpg" alt="Kyle Dimayuga as Certified Coffee Master at Starbucks Reserve Bar"
+                        loading="lazy" width="600" height="400"
+                        onerror="this.src='https://placehold.co/600x400/1a1a1a/f5c400?text=Starbucks+Coffee+Master'">
+                    <div class="gallery-caption">
+                        <span><i class="fas fa-coffee text-accent"></i> Coffee Master — Starbucks Reserve</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" role="button" tabindex="0" aria-label="Open photo: Architecture">
+                    <img src="architecture1.jpg"
+                        alt="Looking up at golden glass skyscrapers — architectural photography" loading="lazy"
+                        width="400" height="400"
+                        onerror="this.src='https://placehold.co/400x400/1a1a1a/f5c400?text=Architecture'">
+                    <div class="gallery-caption">
+                        <span><i class="fas fa-building text-accent"></i> Urban Architecture</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" role="button" tabindex="0" aria-label="Open photo: Portrait">
+                    <img src="profile.jpg" alt="Joshua Kyle Dimayuga professional portrait photo" loading="lazy"
+                        width="400" height="400"
+                        onerror="this.src='https://placehold.co/400x400/1a1a1a/f5c400?text=Portrait'">
+                    <div class="gallery-caption">
+                        <span><i class="fas fa-portrait text-accent"></i> Professional Portrait</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox" hidden>
+                <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="lightbox-content">
+                    <img src="" alt="" class="lightbox-img" id="lightboxImg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         RESUME SECTION
+    ============================================================ -->
+    <section id="resume" class="section section-dark" aria-label="Resume">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">My Credentials</span>
+                <h2 class="section-title">View My <span class="text-accent">Resume</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <div class="resume-showcase" data-aos="fade-up">
+                <!-- Resume Preview Card -->
+                <div class="resume-preview glass-card">
+                    <div class="resume-preview-img">
+                        <img src="resume-preview.jpg" alt="Joshua Kyle C. Dimayuga — Resume Preview" loading="lazy"
+                            width="400" height="560"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="resume-placeholder" style="display:none">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Resume</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resume Info & Actions -->
+                <div class="resume-info">
+                    <h3>Joshua Kyle C. Dimayuga</h3>
+                    <p class="resume-subtitle">Full-Stack Web Developer &amp; UI/UX Designer</p>
+
+                    <div class="resume-highlights">
+                        <div class="resume-highlight-item">
+                            <i class="fas fa-graduation-cap text-accent"></i>
+                            <div>
+                                <strong>BS Information Technology</strong>
+                                <span>De La Salle-College of Saint Benilde</span>
+                            </div>
+                        </div>
+                        <div class="resume-highlight-item">
+                            <i class="fas fa-award text-accent"></i>
+                            <div>
+                                <strong>3× Consecutive Dean's Lister</strong>
+                                <span>GPA 3.416 – 3.700</span>
+                            </div>
+                        </div>
+                        <div class="resume-highlight-item">
+                            <i class="fas fa-coffee text-accent"></i>
+                            <div>
+                                <strong>Certified Coffee Master</strong>
+                                <span>Starbucks Coffee Company, 2020 – Present</span>
+                            </div>
+                        </div>
+                        <div class="resume-highlight-item">
+                            <i class="fas fa-film text-accent"></i>
+                            <div>
+                                <strong>Professional Animation Credits</strong>
+                                <span>Star vs. the Forces of Evil, Tom and Jerry, & more</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-actions">
+                        <a href="resume.pdf" target="_blank" class="btn btn-primary" id="resume-view-btn">
+                            <i class="fas fa-eye"></i> View Resume
+                        </a>
+                        <a href="resume.pdf" download="Joshua_Kyle_Dimayuga_Resume.pdf" class="btn btn-outline"
+                            id="resume-download-btn">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                        <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-ghost-hero" id="resume-github-btn" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+    ============================================================ -->
+    <section id="contact" class="section" aria-label="Contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Let's Connect</span>
+                <h2 class="section-title">Get in <span class="text-accent">Touch</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrap" data-aos="fade-right">
+                    <p class="contact-intro">
+                        Whether you need a stunning website, creative design work, or just want to say hello —
+                        I'd love to hear from you!
+                    </p>
+
+                    <div class="contact-cards">
+                        <a href="mailto:kyle.dimayuga18@gmail.com" class="contact-card glass-card"
+                            aria-label="Send email">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-detail">
+                                <span>Email</span>
+                                <strong>kyle.dimayuga18@gmail.com</strong>
+                            </div>
+                        </a>
+                        <a href="tel:09770191183" class="contact-card glass-card" aria-label="Call phone">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-detail">
+                                <span>Phone</span>
+                                <strong>09770191183</strong>
+                            </div>
+                        </a>
+                        <div class="contact-card glass-card" aria-label="Location">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-detail">
+                                <span>Location</span>
+                                <strong>Mandaluyong City, Philippines</strong>
+                            </div>
+                        </div>
+                        <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
+                            class="contact-card glass-card" aria-label="GitHub Profile">
+                            <div class="contact-icon"><i class="fab fa-github"></i></div>
+                            <div class="contact-detail">
+                                <span>GitHub</span>
+                                <strong>github.com/SaxaXIV</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form glass-card" id="contactForm" data-aos="fade-left" novalidate
+                    aria-label="Send a message">
+                    <h3>Send a Message</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Your name" required
+                                autocomplete="name" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required
+                                autocomplete="email" aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" name="subject" placeholder="What's this about?"
+                            autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" placeholder="Tell me about your project..."
+                            rows="5" required aria-required="true"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="form-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+
+                    <!-- Success / Error Feedback -->
+                    <div class="form-feedback" id="formFeedback" role="alert" aria-live="polite"></div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer id="footer" role="contentinfo">
+        <div class="container footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo" aria-label="Back to top">
+                    JK<span class="text-accent">D</span>
+                </a>
+                <p>Web Developer · UI/UX Designer · Animator</p>
+            </div>
+
+            <!-- Quick Links -->
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <!-- Social Links + Resume -->
+            <div class="footer-social" aria-label="Social Media Links">
+                <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer" class="social-link"
+                    aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:kyle.dimayuga18@gmail.com" class="social-link" aria-label="Send Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:09770191183" class="social-link" aria-label="Call Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="resume.pdf" download="Joshua_Kyle_Dimayuga_Resume.pdf" class="social-link"
+                    aria-label="Download Resume">
+                    <i class="fas fa-file-download"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="year"></span> Joshua Kyle C. Dimayuga. All rights reserved.
+                Made with <span class="text-accent">&#9829;</span> &amp; &#9749; in Manila.
+            </p>
+        </div>
+
+        <!-- Back to top -->
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </footer>
+
+    <!-- ============================================================
+         TOAST NOTIFICATION
+    ============================================================ -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <span class="toast-msg" id="toastMsg"></span>
+    </div>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
