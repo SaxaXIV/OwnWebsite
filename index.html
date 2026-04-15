@@ -42,6 +42,16 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- iOS / Apple PWA Support -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="JKD Portfolio">
+    <link rel="apple-touch-icon" href="profile.jpg">
+
     <!-- Structured Data / JSON-LD -->
     <script type="application/ld+json">
     {
@@ -273,6 +283,10 @@
                         <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer"
                             class="chip chip-accent" aria-label="GitHub">
                             <i class="fab fa-github"></i> SaxaXIV
+                        </a>
+                        <a href="https://www.facebook.com/kyledii" target="_blank" rel="noopener noreferrer"
+                            class="chip chip-accent" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i> kyledii
                         </a>
                     </div>
                 </div>
@@ -680,7 +694,7 @@
                         loading="lazy" width="600" height="400"
                         onerror="this.src='https://placehold.co/600x400/1a1a1a/f5c400?text=Starbucks+Coffee+Master'">
                     <div class="gallery-caption">
-                        <span><i class="fas fa-coffee text-accent"></i> Coffee Master — Starbucks Reserve</span>
+                        <span><i class="fas fa-coffee text-accent"></i> Coffee Master — Starbucks 6750</span>
                     </div>
                 </div>
 
@@ -691,7 +705,7 @@
                         width="400" height="400"
                         onerror="this.src='https://placehold.co/400x400/1a1a1a/f5c400?text=Architecture'">
                     <div class="gallery-caption">
-                        <span><i class="fas fa-building text-accent"></i> Urban Architecture</span>
+                        <span><i class="fas fa-building text-accent"></i> </span>
                     </div>
                 </div>
 
@@ -799,6 +813,79 @@
     </section>
 
     <!-- ============================================================
+         HOBBIES SECTION
+    ============================================================ -->
+    <section id="hobbies" class="section section-dark" aria-label="Hobbies & Interests">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Beyond the Code</span>
+                <h2 class="section-title">Hobbies & <span class="text-accent">Interests</span></h2>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <div class="hobbies-grid" data-aos="fade-up">
+
+                <!-- Guitar -->
+                <div class="hobby-card glass-card">
+                    <div class="hobby-img-wrap">
+                        <img src="guitar.png" alt="Kyle playing guitar" loading="lazy" width="400" height="300"
+                            onerror="this.src='https://placehold.co/400x300/1a1a1a/f5c400?text=Guitar'">
+                    </div>
+                    <div class="hobby-body">
+                        <div class="hobby-icon"><i class="fas fa-guitar"></i></div>
+                        <h3>Guitar</h3>
+                        <p>Self-taught guitarist who loves shredding solos and exploring different genres from rock to blues.</p>
+                    </div>
+                </div>
+
+                <!-- Gaming -->
+                <div class="hobby-card glass-card">
+                    <div class="hobby-img-wrap">
+                        <img src="collection.png" alt="Kyle's gaming and model kit collection" loading="lazy" width="400" height="300"
+                            onerror="this.src='https://placehold.co/400x300/1a1a1a/f5c400?text=Gaming'">
+                    </div>
+                    <div class="hobby-body">
+                        <div class="hobby-icon"><i class="fas fa-gamepad"></i></div>
+                        <h3>Gaming</h3>
+                        <p>Avid gamer with an extensive collection of games and model kits. Always ready for the next adventure.</p>
+                    </div>
+                </div>
+
+                <!-- Sports -->
+                <div class="hobby-card glass-card">
+                    <div class="hobby-img-wrap hobby-img-placeholder">
+                        <div class="hobby-sport-icons">
+                            <i class="fas fa-basketball-ball"></i>
+                            <i class="fas fa-table-tennis"></i>
+                        </div>
+                    </div>
+                    <div class="hobby-body">
+                        <div class="hobby-icon"><i class="fas fa-running"></i></div>
+                        <h3>Sports</h3>
+                        <p>Loves playing <strong class="text-accent">basketball</strong> and <strong class="text-accent">table tennis</strong> — competitive at heart, team player by nature.</p>
+                    </div>
+                </div>
+
+                <!-- Anime & Marvel -->
+                <div class="hobby-card glass-card">
+                    <div class="hobby-img-wrap hobby-img-placeholder">
+                        <div class="hobby-sport-icons">
+                            <i class="fas fa-film"></i>
+                            <i class="fas fa-mask"></i>
+                        </div>
+                    </div>
+                    <div class="hobby-body">
+                        <div class="hobby-icon"><i class="fas fa-tv"></i></div>
+                        <h3>Anime & Marvel</h3>
+                        <p>Passionate about anime series and Marvel Cinematic Universe — always hyped for the next episode or movie drop.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
          CONTACT SECTION
     ============================================================ -->
     <section id="contact" class="section" aria-label="Contact">
@@ -847,6 +934,14 @@
                             <div class="contact-detail">
                                 <span>GitHub</span>
                                 <strong>github.com/SaxaXIV</strong>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/kyledii" target="_blank" rel="noopener noreferrer"
+                            class="contact-card glass-card" aria-label="Facebook Profile">
+                            <div class="contact-icon"><i class="fab fa-facebook"></i></div>
+                            <div class="contact-detail">
+                                <span>Facebook</span>
+                                <strong>facebook.com/kyledii</strong>
                             </div>
                         </a>
                     </div>
@@ -920,6 +1015,10 @@
 
             <!-- Social Links + Resume -->
             <div class="footer-social" aria-label="Social Media Links">
+                <a href="https://www.facebook.com/kyledii" target="_blank" rel="noopener noreferrer" class="social-link"
+                    aria-label="Facebook Profile">
+                    <i class="fab fa-facebook"></i>
+                </a>
                 <a href="https://github.com/SaxaXIV" target="_blank" rel="noopener noreferrer" class="social-link"
                     aria-label="GitHub Profile">
                     <i class="fab fa-github"></i>
@@ -960,6 +1059,17 @@
 
     <!-- Main Script -->
     <script src="script.js"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('[PWA] Service Worker registered:', reg.scope))
+                    .catch(err => console.warn('[PWA] Service Worker failed:', err));
+            });
+        }
+    </script>
 </body>
 
 </html>

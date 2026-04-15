@@ -1462,6 +1462,111 @@ a.chip-accent:hover i {
 }
 
 /* ============================================================
+   HOBBIES SECTION
+============================================================ */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.hobby-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: default;
+}
+
+.hobby-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(245, 196, 0, 0.12);
+}
+
+.hobby-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-surface);
+}
+
+.hobby-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.hobby-card:hover .hobby-img-wrap img {
+  transform: scale(1.07);
+}
+
+.hobby-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hobby-sport-icons {
+  display: flex;
+  gap: 2rem;
+  font-size: 3.5rem;
+  color: var(--color-accent-base);
+  opacity: 0.35;
+}
+
+.hobby-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hobby-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(245, 196, 0, 0.1);
+  border: 1px solid rgba(245, 196, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-accent-base);
+  margin-bottom: 0.25rem;
+}
+
+.hobby-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.hobby-body p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .hobbies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+  .hobby-img-wrap { height: 180px; }
+}
+
+/* ============================================================
    RESUME SECTION
 ============================================================ */
 .resume-showcase {
@@ -1851,39 +1956,153 @@ footer {
 }
 
 /* ============================================================
-   MEDIA QUERIES
+   MEDIA QUERIES — TABLET & MOBILE
 ============================================================ */
+
+/* ---- Tablet (≤1024px) ---- */
 @media (max-width: 1024px) {
   .hero-name { font-size: 3.5rem; }
   .about-grid { grid-template-columns: 1fr; }
   .about-profile-card { max-width: 400px; margin: 0 auto; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
+/* ---- Mobile (≤768px) ---- */
 @media (max-width: 768px) {
+  :root {
+    --section-padding: 70px 0;
+    --nav-height: 70px;
+  }
+
   .section { padding: var(--section-padding-mobile); }
-  
-  /* Nav Mobile */
+
+  /* ---- Nav ---- */
   .nav-links, .nav-right .nav-github { display: none; }
   .hamburger { display: flex; }
-  
-  /* Hero Mobile */
-  .hero-container { grid-template-columns: 1fr; text-align: center; }
-  .hero-content { display: flex; flex-direction: column; align-items: center; }
-  .hero-actions { justify-content: center; }
-  .float-badge { transform: scale(0.8); }
-  
-  /* Timeline Mobile */
+
+  /* ---- Hero ---- */
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+  }
+  .hero-visual { order: 1; }
+  .hero-image-wrapper { max-width: 280px; margin: 0 auto; }
+  .hero-name { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+  .hero-tagline { font-size: 1rem; }
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .hero-stats { gap: 1.25rem; }
+  .stat-num { font-size: 1.75rem; }
+  .float-badge { transform: scale(0.75); }
+  .badge-coffee { bottom: 2%; left: -5%; }
+  .badge-dev { top: 2%; right: -5%; }
+
+  /* ---- Section Headers ---- */
+  .section-title { font-size: 2rem; }
+
+  /* ---- About ---- */
+  .comp-grid { grid-template-columns: 1fr; }
+  .about-profile-card { max-width: 340px; }
+
+  /* ---- Skills ---- */
+  .skills-grid { grid-template-columns: 1fr; }
+
+  /* ---- Timeline ---- */
   .timeline::before { left: 20px; }
   .timeline-item { padding-left: 50px; }
   .tl-connector { left: 11px; }
   .tl-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .tl-credits { grid-template-columns: 1fr; }
-  
-  /* Contact Mobile */
+  .tl-photo-wrap { height: 180px; }
+
+  /* ---- Projects ---- */
+  .projects-grid { grid-template-columns: 1fr; }
+  .filter-tabs { gap: 0.5rem; }
+  .filter-btn { padding: 0.4rem 1rem; font-size: 0.85rem; }
+
+  /* ---- Gallery ---- */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+    gap: 1rem;
+  }
+  .gallery-item-wide { grid-column: span 1; }
+
+  /* ---- Resume ---- */
+  .resume-actions { justify-content: center; }
+  .resume-info { text-align: center; }
+  .resume-highlight-item { text-align: left; }
+  .resume-info h3 { font-size: 1.5rem; }
+
+  /* ---- Contact ---- */
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }
-  
-  /* Footer Mobile */
+  .contact-form { padding: 1.5rem; }
+
+  /* ---- Footer ---- */
   .footer-container { flex-direction: column; text-align: center; }
   .footer-nav { justify-content: center; }
+  .footer-social { justify-content: center; }
+  .back-to-top { right: 1rem; }
+
+  /* ---- Buttons — larger touch targets ---- */
+  .btn { padding: 0.85rem 1.5rem; min-height: 48px; }
+  .btn-ghost-hero { width: 48px; height: 48px; }
+
+  /* ---- Toast ---- */
+  .toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    transform: translateY(200%);
+  }
+  .toast.show { transform: translateY(0); }
 }
+
+/* ---- Small phones (≤480px) ---- */
+@media (max-width: 480px) {
+  .hero-name { font-size: clamp(2rem, 9vw, 2.75rem); }
+  .hero-image-wrapper { max-width: 230px; }
+  .hero-badge { font-size: 0.78rem; }
+  .stat-num { font-size: 1.5rem; }
+  .contact-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .section-title { font-size: 1.75rem; }
+  .profile-frame { border-width: 3px; }
+  .tl-card { padding: 1.25rem; }
+  .info-card { padding: 1.25rem; }
+  .contact-form { padding: 1.25rem; }
+}
+
+/* ---- iOS Safe Area Insets (for notched devices) ---- */
+@supports (padding: max(0px)) {
+  nav {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+  footer {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+  .toast {
+    bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* ---- Prevent text overflow on very small screens ---- */
+@media (max-width: 360px) {
+  .container { width: 95%; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { text-align: center; }
+  .resume-actions { flex-direction: column; }
+}
+
