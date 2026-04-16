@@ -258,6 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('contact-name').value;
             const email = document.getElementById('contact-email').value;
             const message = document.getElementById('contact-message').value;
+            const subject = document.getElementById('contact-subject').value;
 
             if (!name || !email || !message) {
                 showToast('Please fill in all required fields.', 'error');
@@ -270,18 +271,41 @@ document.addEventListener('DOMContentLoaded', () => {
             btnText.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            // Mock submission
-            setTimeout(() => {
+            // Submit using fetch to Formsubmit
+            fetch('https://formsubmit.co/ajax/kyle.dimayuga18@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    subject: subject || 'New message from portfolio',
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
                 btnText.textContent = originalText;
                 submitBtn.disabled = false;
                 
-                // Show success
-                formFeedback.textContent = 'Thank you! Your message has been sent.';
-                formFeedback.classList.add('feedback-success');
-                showToast('Message sent successfully!');
-                
-                contactForm.reset();
-            }, 1500);
+                if (data.success === 'true' || data.success === true) {
+                    // Show success
+                    formFeedback.textContent = 'Thank you! Your message has been sent.';
+                    formFeedback.classList.add('feedback-success');
+                    showToast('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    showToast('Oops! Something went wrong.', 'error');
+                }
+            })
+            .catch(error => {
+                btnText.textContent = originalText;
+                submitBtn.disabled = false;
+                showToast('Oops! Something went wrong.', 'error');
+                console.log(error);
+            });
         });
     }
 
