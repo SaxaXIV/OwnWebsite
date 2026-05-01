@@ -810,6 +810,18 @@ textarea {
   right: -5%;
 }
 
+.badge-music {
+  bottom: 30%;
+  right: -10%;
+  animation-delay: 2.5s;
+}
+
+.badge-gamer {
+  top: 45%;
+  left: -15%;
+  animation-delay: 1.5s;
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
